@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
-
+import { Base64 } from 'js-base64'
 // 无限轮播图
 import InfiniteLoading from 'v3-infinite-loading'
 
@@ -50,7 +50,7 @@ onMounted(async () => {
   const resp = await api.getArticles(params)
   articleList.value = resp.data
   // 过滤 Markdown 符号
-  articleList.value.forEach(e => e.content = filterMdSymbol(e.content))
+  articleList.value.forEach(e => e.content = filterMdSymbol(Base64.decode(e.content)))
   params.page_num++
   loading.value = false
 })

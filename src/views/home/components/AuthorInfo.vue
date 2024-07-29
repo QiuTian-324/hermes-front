@@ -12,7 +12,7 @@ function addToFavorites() {
 </script>
 
 <template>
-  <div class="card-view  animate-duration-600  text-center lg:block space-y-5">
+  <div class="card-view card-fade-up  animate-duration-600  text-center lg:block space-y-5">
     <div class="mt-4 flex justify-center">
       <img class="w-[105px] h-[105px] rounded-2xl duration-600  hover:-translate-y-4" :src="convertImgUrl(blogConfig.website_avatar)" alt="author avatar">
     </div>
@@ -24,19 +24,19 @@ function addToFavorites() {
     </div>
     <!-- 博客信息 -->
     <div class="flex justify-center">
-      <RouterLink to="/archives" class="flex-1">
+      <RouterLink to="/archives" class="flex-1 hover:text-blue border-r-2 border-dashed">
         <p>文章</p>
         <p class="text-xl">
           {{ articleCount }}
         </p>
       </RouterLink>
-      <RouterLink to="/categories" class="flex-1">
+      <RouterLink to="/categories" class="flex-1 hover:text-blue">
         <p>分类</p>
         <p class="text-xl">
           {{ categoryCount }}
         </p>
       </RouterLink>
-      <RouterLink to="/tags" class="flex-1">
+      <RouterLink to="/tags" class="flex-1 hover:text-blue border-l-2 border-dashed">
         <p>标签</p>
         <p class="text-xl">
           {{ tagCount }}
@@ -46,7 +46,7 @@ function addToFavorites() {
     <!-- 收藏按钮 -->
     <div class="flex justify-center text-center">
       <button
-        class="h-9 w-7/8 f-c-c transform rounded bg-blue-600 text-white transition-200 ease-in-out hover:scale-105 hover:bg-orange-600"
+        class="h-9 w-7/8 f-c-c transform rounded bg-black text-white transition-200 ease-in-out hover:scale-105 "
         @click="addToFavorites"
       >
         <span class="i-mdi:bookmark mr-1 text-xl" /> 加入书签

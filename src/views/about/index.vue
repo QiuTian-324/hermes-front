@@ -35,7 +35,7 @@ onMounted(async () => {
 <template>
   <BannerPage label="about" title="关于我" card>
     <div class="flex justify-center">
-      <img :src="blogConfig.website_avatar" class="w-25 duration-600 hover:rotate-360" alt="avatar">
+      <img :src="blogConfig.website_avatar" class="w-25 transition-600 hover:-translate-y-2 rounded-xl" alt="avatar">
     </div>
     <div class="flex justify-center">
       <article class="max-w-none prose prose-truegray">

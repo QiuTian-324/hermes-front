@@ -8,6 +8,7 @@ import go from 'highlight.js/lib/languages/go'
 import json from 'highlight.js/lib/languages/json'
 import javascript from 'highlight.js/lib/languages/javascript'
 import bash from 'highlight.js/lib/languages/bash'
+import { Base64 } from 'js-base64'
 
 import BannerInfo from './components/BannerInfo.vue'
 import Copyright from './components/Copyright.vue'
@@ -58,7 +59,7 @@ onMounted(async () => {
     const resp = await api.getArticleDetail(route.params.id)
     data.value = resp.data
     // marked 解析 markdown 文本
-    data.value.content = await marked.parse(resp.data.content, { async: true })
+    data.value.content = await marked.parse(Base64.decode(resp.data.content), { async: true })
     await nextTick()
     // highlight.js 代码高亮
     document.querySelectorAll('pre code').forEach(el => hljs.highlightElement(el))

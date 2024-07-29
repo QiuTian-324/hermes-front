@@ -21,13 +21,13 @@ onMounted(() => {
 
 <template>
   <BannerPage label="link" title="友情链接" card :loading="loading">
-    <div class="space-y-5">
+    <div class="space-y-5 flex flex-col justify-center">
       <!-- 友链列表 -->
       <LinkList :link-list="linkList" />
       <!-- 添加友链 -->
       <AddLink />
       <!-- 评论 -->
-      <Comment class="mt-30" :type="2" />
+      <Comment :type="2" />
     </div>
   </BannerPage>
 </template>

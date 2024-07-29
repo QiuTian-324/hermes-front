@@ -82,7 +82,7 @@ function openLogin() {
         <div class="flex items-center">
           <span class="mr-4 inline-block w-16 text-right"> 邮箱号 </span>
           <input
-            v-model="form.username" required placeholder="邮箱号，也是用户名"
+            v-model="form.username" required placeholder="请输入邮箱号"
             class="block w-full border-0 rounded-md p-2 text-gray-900 shadow-sm outline-none ring-1 ring-gray-300 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-emerald"
           >
         </div>
@@ -99,7 +99,7 @@ function openLogin() {
         <div class="flex items-center">
           <span class="mr-4 inline-block w-16 text-right"> 密码 </span>
           <input
-            v-model="form.password" required type="password" placeholder="密码"
+            v-model="form.password" required type="password" placeholder=""
             class="block w-full border-0 rounded-md p-2 text-gray-900 shadow-sm outline-none ring-1 ring-gray-300 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-emerald"
           >
         </div>

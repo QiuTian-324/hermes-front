@@ -19,8 +19,8 @@ const loginFlag = computed({
 })
 
 const form = ref({
-  username: 'admin',
-  password: '123456',
+  username: '',
+  password: '',
 })
 
 // 登录
@@ -38,7 +38,8 @@ async function handleLogin() {
     // 加载用户信息, 更新 pinia 中信息, 刷新页面
     await userStore.getUserInfo()
     // 清空表单
-    form.value = { username: 'test@qq.com', password: '11111' }
+    // test@qq.com  11111
+    form.value = { username: '', password: '' }
     loginFlag.value = false
   }
 
@@ -75,16 +76,16 @@ function openForget() {
       </div>
       <div class="my-7 space-y-4">
         <div class="flex items-center">
-          <span class="mr-4 inline-block w-16 text-right"> 用户名 </span>
+          <span class="mr-4 inline-block w-16 text-right"> 邮箱 </span>
           <input
-            v-model="form.username" required placeholder="用户名"
+            v-model="form.username" required placeholder="请输入邮箱"
             class="block w-full border-0 rounded-md p-2 text-gray-900 shadow-sm outline-none ring-1 ring-gray-300 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-emerald"
           >
         </div>
         <div class="flex items-center">
           <span class="mr-4 inline-block w-16 text-right"> 密码 </span>
           <input
-            v-model="form.password" type="password" placeholder="密码"
+            v-model="form.password" type="password" placeholder="请输入密码"
             class="block w-full border-0 rounded-md p-2 text-gray-900 shadow-sm outline-none ring-1 ring-gray-300 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-emerald"
           >
         </div>

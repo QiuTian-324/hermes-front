@@ -32,7 +32,7 @@ function formatDate(date) {
 
 <template>
   <!-- PC 端显示 -->
-  <div class="mx-4 mt-12 hidden text-center text-light lg:block">
+  <div class="mx-4 mt-12 hidden text-center text-black lg:block">
     <h1 class="text-3xl">
       {{ article.title }}
     </h1>
@@ -42,7 +42,7 @@ function formatDate(date) {
       <span class="i-mdi:update mr-1 text-lg" /> 更新于 {{ formatDate(article.updated_at) }}
       <span class="px-2">|</span>
       <RouterLink :to="`/categories/${article.category?.id}?name=${article.category?.name}`" class="f-c-c">
-        <span class="i-material-symbols:menu mr-1 text-lg" /> {{ article.category?.name }}
+        <span class="i-material-symbols:menu mr-1 text-lg text-blue-700 " /> <span class="text-blue-700">{{ article.category?.name }}</span>
       </RouterLink>
     </p>
     <div class="f-c-c">
@@ -56,7 +56,7 @@ function formatDate(date) {
     </div>
   </div>
   <!-- 移动端显示 -->
-  <div class="mx-4 mt-12 block text-left text-light lg:hidden space-y-1.5">
+  <div class="mx-4 mt-12 block text-left text-black lg:hidden space-y-1.5">
     <h1 class="text-2xl">
       {{ article.title }}
     </h1>
@@ -68,11 +68,11 @@ function formatDate(date) {
     <div class="flex gap-2">
       <div class="f-c-c">
         <RouterLink :to="`/categories/${article.category?.id}?name=${article.category?.name}`">
-          <span class="i-material-symbols:menu mr-1" /> {{ article.category?.name }}
+          <span class="i-material-symbols:menu mr-1 text-blue-700" /> <span class="text-blue-700">{{ article.category?.name }}</span>
         </RouterLink>
       </div>
       <RouterLink v-for="tag of article.tags" :key="tag.id" :to="`/tags/${tag.id}?name=${tag.name}`">
-        <span class="border-1px border-blue rounded-xl px-2 py-1 text-sm text-white"> {{ tag.name }} </span>
+        <span class="border-1px text-blue-700 border-blue-700 rounded-xl px-2 py-1 text-sm"> {{ tag.name }} </span>
       </RouterLink>
     </div>
     <div>
